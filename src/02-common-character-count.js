@@ -15,14 +15,13 @@ function getCommonCharacterCount(s1, s2) {
   let res = 0;
   if (minS.length > maxS.length) [maxS, minS] = [minS, maxS];
 
-  for (const s of minS) {
-    if (maxS.includes(s)) {
+  for (let i = 0; i < minS.length; i++) {
+    if (maxS.includes(minS[i])) {
       res++;
-      maxS.splice(maxS.indexOf(s), 1);
+      maxS.splice(maxS.indexOf(minS[i]), 1);
     }
   }
   return res;
 }
-
 
 module.exports = getCommonCharacterCount;
