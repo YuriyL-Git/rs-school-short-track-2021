@@ -5,15 +5,17 @@
  * Your task is to check by given string inputString
  * whether it's a MAC-48 address or not.
  *
- * @param {Number} inputString
- * @return {Number}
+ * @return {boolean}
  *
  * @example
  * For 00-1B-63-84-45-E6, the output should be true.
  *
+ * @param address
  */
-function isMAC48Address(/* n */) {
-  throw new Error('Not implemented');
+
+function isMAC48Address(address) {
+  const regEx = /^(([0-9A-F]{2})-([0-9A-F]{2})-([0-9A-F]{2})-([0-9A-F]{2})-([0-9A-F]{2})-([0-9A-F]{2}))$/g;
+  return regEx.test(address);
 }
 
 module.exports = isMAC48Address;
